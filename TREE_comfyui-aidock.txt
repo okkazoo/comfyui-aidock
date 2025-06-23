@@ -1,0 +1,194 @@
+comfyui-aidock
+|-- .git
+|   |-- config
+|   |-- description
+|   |-- HEAD
+|   |-- hooks
+|   |   |-- applypatch-msg.sample
+|   |   |-- commit-msg.sample
+|   |   |-- fsmonitor-watchman.sample
+|   |   |-- post-update.sample
+|   |   |-- pre-applypatch.sample
+|   |   |-- pre-commit.sample
+|   |   |-- pre-merge-commit.sample
+|   |   |-- pre-push.sample
+|   |   |-- pre-rebase.sample
+|   |   |-- pre-receive.sample
+|   |   |-- prepare-commit-msg.sample
+|   |   |-- push-to-checkout.sample
+|   |   |-- sendemail-validate.sample
+|   |   |-- update.sample
+|   |-- index
+|   |-- info
+|   |   |-- exclude
+|   |-- logs
+|   |   |-- HEAD
+|   |   |-- refs
+|   |   |   |-- heads
+|   |   |   |   |-- main
+|   |   |   |-- remotes
+|   |   |   |   |-- origin
+|   |   |   |   |   |-- HEAD
+|   |-- objects
+|   |   |-- info
+|   |   |-- pack
+|   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.idx
+|   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.pack
+|   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.rev
+|   |-- packed-refs
+|   |-- refs
+|   |   |-- heads
+|   |   |   |-- main
+|   |   |-- remotes
+|   |   |   |-- origin
+|   |   |   |   |-- HEAD
+|   |   |-- tags
+|-- .github
+|   |-- FUNDING.yml
+|   |-- images
+|   |   |-- api-schema-image2image.png
+|   |   |-- api-schema-rawworkflow.png
+|   |   |-- api-schema-text2image.png
+|   |   |-- api1.png
+|   |   |-- runpod-template.png
+|   |   |-- serviceportal-links.png
+|   |   |-- serviceportal-logs.png
+|   |   |-- serviceportal-processes.png
+|   |-- workflows
+|   |   |-- build-env.yml
+|   |   |-- clear-cache.yml
+|   |   |-- delete-old-images.yml
+|   |   |-- delete-untagged-images.yml
+|   |   |-- docker-build.yml
+|-- .gitignore
+|-- build
+|   |-- COPY_ROOT_0
+|   |   |-- opt
+|   |   |   |-- ai-dock
+|   |   |   |   |-- bin
+|   |   |   |   |   |-- build
+|   |   |   |   |   |   |-- layer0
+|   |   |   |   |   |   |   |-- amd.sh
+|   |   |   |   |   |   |   |-- clean.sh
+|   |   |   |   |   |   |   |-- common.sh
+|   |   |   |   |   |   |   |-- cpu.sh
+|   |   |   |   |   |   |   |-- init.sh
+|   |   |   |   |   |   |   |-- nvidia.sh
+|   |-- COPY_ROOT_1
+|   |   |-- etc
+|   |   |   |-- supervisor
+|   |   |   |   |-- supervisord
+|   |   |   |   |   |-- conf.d
+|   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- comfyui.conf
+|   |   |   |   |   |   |-- comfyui_api_wrapper.conf
+|   |   |-- opt
+|   |   |   |-- ai-dock
+|   |   |   |   |-- api-wrapper
+|   |   |   |   |   |-- config
+|   |   |   |   |   |   |-- __init__.py
+|   |   |   |   |   |   |-- config.py
+|   |   |   |   |   |-- environment.yaml
+|   |   |   |   |   |-- main.py
+|   |   |   |   |   |-- modifiers
+|   |   |   |   |   |   |-- __init__.py
+|   |   |   |   |   |   |-- basemodifier.py
+|   |   |   |   |   |   |-- text2image.py
+|   |   |   |   |   |-- payloads
+|   |   |   |   |   |   |-- imgsave.json
+|   |   |   |   |   |-- requestmodels
+|   |   |   |   |   |   |-- __init__.py
+|   |   |   |   |   |   |-- models.py
+|   |   |   |   |   |-- requirements.txt
+|   |   |   |   |   |-- responses
+|   |   |   |   |   |   |-- __init__.py
+|   |   |   |   |   |   |-- result.py
+|   |   |   |   |   |-- workers
+|   |   |   |   |   |   |-- generation_worker.py
+|   |   |   |   |   |   |-- postprocess_worker.py
+|   |   |   |   |   |   |-- preprocess_worker.py
+|   |   |   |   |   |-- workflows
+|   |   |   |   |   |   |-- image2image.json
+|   |   |   |   |   |   |-- text2image.json
+|   |   |   |   |-- bin
+|   |   |   |   |   |-- build
+|   |   |   |   |   |   |-- layer1
+|   |   |   |   |   |   |   |-- amd.sh
+|   |   |   |   |   |   |   |-- clean.sh
+|   |   |   |   |   |   |   |-- common.sh
+|   |   |   |   |   |   |   |-- cpu.sh
+|   |   |   |   |   |   |   |-- init.sh
+|   |   |   |   |   |   |   |-- nvidia.sh
+|   |   |   |   |   |-- preflight.d
+|   |   |   |   |   |   |-- 10-default.sh
+|   |   |   |   |   |-- set-comfyui-args.sh
+|   |   |   |   |   |-- supervisor-comfyui-api-wrapper.sh
+|   |   |   |   |   |-- supervisor-comfyui.sh
+|   |   |   |   |   |-- update-comfyui.sh
+|   |   |   |   |-- storage_monitor
+|   |   |   |   |   |-- etc
+|   |   |   |   |   |   |-- mappings.sh
+|   |   |   |-- caddy
+|   |   |   |   |-- share
+|   |   |   |   |   |-- service_config_18188
+|   |   |-- root
+|   |   |   |-- .gitkeep
+|   |   |-- usr
+|   |   |   |-- .gitkeep
+|   |   |   |-- local
+|   |   |   |   |-- share
+|   |   |   |   |   |-- ai-dock
+|   |   |   |   |   |   |-- comfyui.ipynb
+|   |-- COPY_ROOT_99
+|   |   |-- opt
+|   |   |   |-- ai-dock
+|   |   |   |   |-- bin
+|   |   |   |   |   |-- build
+|   |   |   |   |   |   |-- layer99
+|   |   |   |   |   |   |   |-- init.sh
+|   |   |   |-- storage
+|   |   |   |   |-- stable_diffusion
+|   |   |   |   |   |-- models
+|   |   |   |   |   |   |-- ckpt
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- controlnet
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- diffusers
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- embeddings
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- esrgan
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- gligen
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- hypernetworks
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- lora
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- style_models
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- unet
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- vae
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |   |   |   |   |   |-- vae_approx
+|   |   |   |   |   |   |   |-- .gitkeep
+|   |-- Dockerfile
+|-- config
+|   |-- authorized_keys
+|   |-- provisioning
+|   |   |-- animated.sh
+|   |   |-- default.sh
+|   |   |-- flux.sh
+|   |   |-- get-models-sd-official.sh
+|   |   |-- sd3.sh
+|   |   |-- seargedp-seargesdxl.sh
+|   |-- rclone
+|   |   |-- rclone.conf
+|   |-- workflows
+|   |   |-- flux-comfyui-example.json
+|-- docker-compose.yaml
+|-- LICENSE.md
+|-- NOTICE.md
+|-- README.md
+|-- REPO_comfyui-aidock.md
