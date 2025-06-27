@@ -1,7 +1,9 @@
-comfyui-aidock
+comfyui-aidock-new
 |-- .git
+|   |-- COMMIT_EDITMSG
 |   |-- config
 |   |-- description
+|   |-- FETCH_HEAD
 |   |-- HEAD
 |   |-- hooks
 |   |   |-- applypatch-msg.sample
@@ -29,12 +31,22 @@ comfyui-aidock
 |   |   |   |-- remotes
 |   |   |   |   |-- origin
 |   |   |   |   |   |-- HEAD
+|   |   |   |   |   |-- main
 |   |-- objects
+|   |   |-- 76
+|   |   |   |-- de79fc93d14d473d762f50efe8925c966d6b14
+|   |   |-- ba
+|   |   |   |-- cc7ae95bebd94c88e390bc59fce4ae881417cf
+|   |   |-- c3
+|   |   |   |-- 0a0db47ed30b295cebbbd8d49b57891359129e
+|   |   |-- da
+|   |   |   |-- c6a4db020088048db7454eb245bf290a1fbc14
 |   |   |-- info
 |   |   |-- pack
 |   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.idx
 |   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.pack
 |   |   |   |-- pack-5ea2d6fccb669e73405c22ebb6bd428bbfe9fa15.rev
+|   |-- ORIG_HEAD
 |   |-- packed-refs
 |   |-- refs
 |   |   |-- heads
@@ -42,6 +54,7 @@ comfyui-aidock
 |   |   |-- remotes
 |   |   |   |-- origin
 |   |   |   |   |-- HEAD
+|   |   |   |   |-- main
 |   |   |-- tags
 |-- .github
 |   |-- FUNDING.yml
@@ -174,6 +187,7 @@ comfyui-aidock
 |   |   |   |   |   |   |-- vae_approx
 |   |   |   |   |   |   |   |-- .gitkeep
 |   |-- Dockerfile
+|-- Build.py
 |-- config
 |   |-- authorized_keys
 |   |-- provisioning
@@ -188,7 +202,11 @@ comfyui-aidock
 |   |-- workflows
 |   |   |-- flux-comfyui-example.json
 |-- docker-compose.yaml
+|-- Launch.py
 |-- LICENSE.md
 |-- NOTICE.md
 |-- README.md
 |-- REPO_comfyui-aidock.md
+|-- vastai
+|   |-- vast.py
+|   |-- vast_get_gpu.py
